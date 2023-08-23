@@ -1,0 +1,14 @@
+{
+    "activities" : [
+        {
+            "id" : "task_1",
+            "name" : "Task Name 1",
+            "tags" : []
+        },
+        {
+            "id" : "task_2",
+            "name" : "Task Name 2",
+            "tags" : ["tag1", "tag2"]
+        }
+    ]
+}
