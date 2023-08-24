@@ -14,10 +14,10 @@ class tty_stopwatch:
         
     def run(self):
         while self.running:
-            duration = int(time.time() - self.start_time)
-            secs = duration % 60
-            mins = duration // 60 % 60
-            hours = duration // 3600 % 3600
+            elapsed_sec = int(time.time() - self.start_time)
+            secs = elapsed_sec % 60
+            mins = elapsed_sec // 60 % 60
+            hours = elapsed_sec // 3600 % 3600
 
             print(f'{hours:02}:{mins:02}:{secs:02}', end='\r')
             time.sleep(min(0.1, 1 - (time.time() % 1)))
@@ -38,9 +38,9 @@ class tty_stopwatch:
         self.thread.join()
 
 def load_config():
-    config_file = 'example_config.json'
-    with open(config_file, 'r') as config_f:
-        config = json.load(config_f)
+    config_path = 'example_config.json'
+    with open(config_path, 'r') as f:
+        config = json.load(f)
         
     return config
 
